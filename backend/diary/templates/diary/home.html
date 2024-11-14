@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+My folder
+
+<h1>{{ folder }}</h1>
+<ul>
+{% for entry in folder.entry_set.all %}
+    <li>{{ entry }}, {{ entry.content}}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
