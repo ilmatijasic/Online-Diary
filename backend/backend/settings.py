@@ -77,6 +77,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
+        'OPTIONS': {
+        'options': '-c search_path=diary'
+    },
         "NAME": "postgres",
         "USER": "postgres",
         "PASSWORD": "password",
@@ -126,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'
